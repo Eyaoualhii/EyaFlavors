@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { Icon } from '@iconify/react'
 import Navigation from '../components/Navigation'
@@ -6,16 +7,36 @@ import Footer from '../components/Footer'
 import Sidebar from '../components/Sidebar'
 import { posts, categories } from '../data/posts'
 
+const POSTS_PER_PAGE = 6
+
 export default function Category() {
   const { slug } = useParams()
+  const [currentPage, setCurrentPage] = useState(1)
 
   const category = categories.find((c) => c.slug === slug)
   const categoryPosts = posts.filter((p) => p.categorySlug === slug)
+
   // Show all posts on the 'recipes' page (excluding site posts); otherwise filter by category
-  const displayPosts = slug === 'recipes'
+  const allDisplayPosts = slug === 'recipes'
     ? posts.filter((p) => p.categorySlug !== 'website')
     : (categoryPosts.length > 0 ? categoryPosts : posts)
+
+  const totalPages = Math.ceil(allDisplayPosts.length / POSTS_PER_PAGE)
+  const indexOfLastPost = currentPage * POSTS_PER_PAGE
+  const indexOfFirstPost = indexOfLastPost - POSTS_PER_PAGE
+  const currentPosts = allDisplayPosts.slice(indexOfFirstPost, indexOfLastPost)
+
   const categoryName = category?.name || slug?.replace(/-/g, ' ')
+
+  // Reset to page 1 when category changes
+  useEffect(() => {
+    setCurrentPage(1)
+  }, [slug])
+
+  // Scroll to top when page changes
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }, [currentPage])
 
   return (
     <div className="bg-white text-brand-dark font-sans antialiased overflow-x-hidden selection:bg-brand-accentLight selection:text-brand-dark">
@@ -41,7 +62,7 @@ export default function Category() {
             </h1>
             <div className="h-[1px] w-16 bg-brand-accent mx-auto" />
             {slug !== 'news' && (
-              <p className="text-brand-muted text-sm mt-4">{displayPosts.length} recipes</p>
+              <p className="text-brand-muted text-sm mt-4">{allDisplayPosts.length} recipes</p>
             )}
           </header>
           {/* YouTube Shorts — only on News & Media */}
@@ -99,61 +120,97 @@ export default function Category() {
 
           {/* Recipe Grid */}
           {slug !== 'news' && (
-            displayPosts.length > 0 ? (
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-                {displayPosts.map((post) => (
-                  <article key={post.slug} className="group flex flex-col">
-                    {/* Image */}
-                    <div className="w-full aspect-[4/3] overflow-hidden mb-5 relative">
-                      <Link to={`/recipe/${post.slug}`} className="block w-full h-full">
-                        <img
-                          src={post.image}
-                          alt={post.imageAlt}
-                          className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
-                        />
-                      </Link>
-                      {post.badge && (
-                        <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm px-3 py-1 text-[10px] font-bold tracking-widest uppercase text-brand-dark">
-                          {post.badge}
-                        </div>
-                      )}
-                    </div>
+            allDisplayPosts.length > 0 ? (
+              <>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+                  {currentPosts.map((post) => (
+                    <article key={post.slug} className="group flex flex-col">
+                      {/* Image */}
+                      <div className="w-full aspect-[4/3] overflow-hidden mb-5 relative">
+                        <Link to={`/recipe/${post.slug}`} className="block w-full h-full">
+                          <img
+                            src={post.image}
+                            alt={post.imageAlt}
+                            className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                          />
+                        </Link>
+                        {post.badge && (
+                          <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm px-3 py-1 text-[10px] font-bold tracking-widest uppercase text-brand-dark">
+                            {post.badge}
+                          </div>
+                        )}
+                      </div>
 
-                    {/* Meta */}
-                    <div className="flex items-center gap-3 text-[10px] font-bold tracking-[0.2em] uppercase mb-3">
-                      <Link
-                        to={`/category/${post.categorySlug}`}
-                        className="text-brand-accent hover:text-brand-accentHover transition-colors"
-                      >
-                        {post.category}
-                      </Link>
-                      <span className="w-1 h-1 rounded-full bg-brand-border" />
-                      <span className="text-brand-muted font-normal">{post.date}</span>
-                    </div>
+                      {/* Meta */}
+                      <div className="flex items-center gap-3 text-[10px] font-bold tracking-[0.2em] uppercase mb-3">
+                        <Link
+                          to={`/category/${post.categorySlug}`}
+                          className="text-brand-accent hover:text-brand-accentHover transition-colors"
+                        >
+                          {post.category}
+                        </Link>
+                        <span className="w-1 h-1 rounded-full bg-brand-border" />
+                        <span className="text-brand-muted font-normal">{post.date}</span>
+                      </div>
 
-                    {/* Title */}
-                    <h2 className="font-serif font-light text-2xl md:text-3xl text-brand-dark leading-snug mb-3">
+                      {/* Title */}
+                      <h2 className="font-serif font-light text-2xl md:text-3xl text-brand-dark leading-snug mb-3">
+                        <Link
+                          to={`/recipe/${post.slug}`}
+                          className="hover:text-brand-accent transition-colors duration-300"
+                        >
+                          {post.title}
+                        </Link>
+                      </h2>
+
+                      {/* Excerpt */}
+                      <p className="text-brand-muted text-sm leading-relaxed mb-4 flex-1">{post.excerpt}</p>
+
+                      {/* Read More */}
                       <Link
                         to={`/recipe/${post.slug}`}
-                        className="hover:text-brand-accent transition-colors duration-300"
+                        className="inline-flex items-center gap-2 text-[10px] font-bold tracking-[0.2em] uppercase text-brand-dark hover:text-brand-accent transition-colors"
                       >
-                        {post.title}
+                        Keep Reading <Icon icon="lucide:arrow-right" width={12} />
                       </Link>
-                    </h2>
+                    </article>
+                  ))}
+                </div>
 
-                    {/* Excerpt */}
-                    <p className="text-brand-muted text-sm leading-relaxed mb-4 flex-1">{post.excerpt}</p>
-
-                    {/* Read More */}
-                    <Link
-                      to={`/recipe/${post.slug}`}
-                      className="inline-flex items-center gap-2 text-[10px] font-bold tracking-[0.2em] uppercase text-brand-dark hover:text-brand-accent transition-colors"
+                {/* Pagination */}
+                {totalPages > 1 && (
+                  <div className="flex justify-center items-center gap-3 md:gap-6 py-12 mt-12 text-sm font-medium border-t border-brand-border">
+                    <button
+                      onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
+                      disabled={currentPage === 1}
+                      className={`text-brand-muted hover:text-brand-dark transition-colors mr-4 ${currentPage === 1 ? 'opacity-30 cursor-not-allowed' : ''}`}
                     >
-                      Keep Reading <Icon icon="lucide:arrow-right" width={12} />
-                    </Link>
-                  </article>
-                ))}
-              </div>
+                      Previous
+                    </button>
+
+                    {Array.from({ length: totalPages }, (_, i) => i + 1).map((p) => (
+                      <button
+                        key={p}
+                        onClick={() => setCurrentPage(p)}
+                        className={`w-10 h-10 flex items-center justify-center rounded-sm transition-all ${currentPage === p
+                            ? 'bg-brand-accentLight text-brand-dark border border-brand-accent font-bold'
+                            : 'hover:bg-brand-grayBg border border-transparent hover:border-brand-border'
+                          }`}
+                      >
+                        {p}
+                      </button>
+                    ))}
+
+                    <button
+                      onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
+                      disabled={currentPage === totalPages}
+                      className={`text-brand-dark hover:text-brand-accent transition-colors ml-4 flex items-center gap-2 ${currentPage === totalPages ? 'opacity-30 cursor-not-allowed' : ''}`}
+                    >
+                      Next <Icon icon="lucide:arrow-right" width={14} />
+                    </button>
+                  </div>
+                )}
+              </>
             ) : (
               <div className="text-center py-24 text-brand-muted">
                 <Icon icon="lucide:search-x" width={48} className="mx-auto mb-4 opacity-30" />
@@ -161,25 +218,6 @@ export default function Category() {
               </div>
             )
           )}
-
-          {/* Pagination 
-          <div className="flex justify-center items-center gap-3 md:gap-6 py-12 mt-12 text-sm font-medium border-t border-brand-border">
-            <span className="w-10 h-10 flex items-center justify-center bg-brand-accentLight text-brand-dark border border-brand-accent rounded-sm font-bold">
-              1
-            </span>
-            {[2, 3].map((p) => (
-              <a
-                key={p}
-                href="#"
-                className="w-10 h-10 flex items-center justify-center hover:bg-brand-grayBg border border-transparent hover:border-brand-border rounded-sm transition-all"
-              >
-                {p}
-              </a>
-            ))}
-            <a href="#" className="text-brand-dark hover:text-brand-accent transition-colors ml-4 flex items-center gap-2">
-              Next <Icon icon="lucide:arrow-right" width={14} />
-            </a>
-          </div>*/}
         </main>
 
         <Sidebar />
