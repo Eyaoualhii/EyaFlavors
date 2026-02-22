@@ -4,6 +4,7 @@ import RecipeArticle from './pages/RecipeArticle'
 import Category from './pages/Category'
 import About from './pages/About'
 import Search from './pages/Search'
+import Contact from './pages/Contact'
 
 export default function App() {
   return (
@@ -14,6 +15,7 @@ export default function App() {
         <Route path="/category/:slug" element={<Category />} />
         <Route path="/about" element={<About />} />
         <Route path="/search" element={<Search />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
     </BrowserRouter>
   )

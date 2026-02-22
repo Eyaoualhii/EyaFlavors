@@ -96,14 +96,14 @@ export default function PostCard({ post }) {
           </button>
           <div className="flex items-center gap-4 border-l border-brand-border pl-6">
             <span className="italic font-serif mr-2">Share:</span>
-            <a href="#" className="hover:text-brand-accent transition-colors">
+            <a href="https://www.facebook.com/Eyaflavors/" className="hover:text-brand-accent transition-colors">
               <Icon icon="lucide:facebook" width={14} />
             </a>
-            <a href="#" className="hover:text-brand-accent transition-colors">
-              <Icon icon="lucide:twitter" width={14} />
+            <a href="https://www.youtube.com/@eyaflavors" className="hover:text-brand-accent transition-colors">
+              <Icon icon="lucide:youtube" width={14} />
             </a>
-            <a href="#" className="hover:text-brand-accent transition-colors">
-              <Icon icon="lucide:pin" width={14} />
+            <a href="https://www.instagram.com/eya_flavors/" className="hover:text-brand-accent transition-colors">
+              <Icon icon="lucide:instagram" width={14} />
             </a>
           </div>
         </div>

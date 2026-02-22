@@ -27,7 +27,7 @@ export default function About() {
               <div className="absolute inset-0 rounded-full border border-brand-accent/50 -rotate-3" />
               <div className="w-full h-full rounded-full overflow-hidden border-[8px] border-brand-accentLight">
                 <img
-                  src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                  src='..//src/images/eyaflavorspic.PNG'
                   alt="Eya"
                   className="w-full h-full object-cover"
                 />
@@ -45,18 +45,17 @@ export default function About() {
             </h1>
             <div className="h-[1px] w-16 bg-brand-accent mb-6 mx-auto lg:mx-0" />
             <p className="text-brand-muted leading-loose mb-4">
-              I'm a recipe developer, food stylist, and photographer based in Paris. My love for baking started
-              at my grandmother's kitchen table, where every Sunday was filled with the warm scent of buttery
-              croissants and homemade jams.
+              Hi! I'm Eya, the heart behind <strong>Eya Flavors</strong>. Ever since I was a child,
+              I’ve loved the magic of the kitchen, especially baking cookies, cakes,and sweet treats that make people smile.
+              Baking has always been my way of expressing creativity, experimenting with flavors, and turning simple ingredients into unforgettable experiences.
             </p>
             <p className="text-brand-muted leading-loose mb-4">
-              Eya Flavors is my little corner of the internet — a place where I share recipes that feel both
-              special and approachable. Whether you're a beginner or a seasoned baker, I want you to feel
-              confident and inspired in your kitchen.
+              Over the years, my passion grew into <strong>Eya Flavors</strong>, a place where I share my love for pastries, unique recipes,
+              and the joy of creating something delicious from scratch.
+              From classic French techniques to modern twists, each recipe is crafted with care and a touch of creativity.
             </p>
             <p className="text-brand-muted leading-loose">
-              When I'm not testing recipes, you'll find me exploring Parisian markets, obsessing over pastry
-              shop windows, or hunting for the perfect cup of coffee.
+              Whether you’re a beginner or an experienced baker, I hope my recipes inspire you to get creative in the kitchen and savor the sweet rewards of baking!
             </p>
           </div>
         </div>
@@ -89,15 +88,16 @@ export default function About() {
                 desc: 'I create and test every recipe multiple times to ensure it works perfectly in your home kitchen.',
               },
               {
+                icon: 'lucide:youtube',
+                title: 'Share on YouTube',
+                desc: 'All my recipes come to life in easy-to-follow video tutorials on my YouTube channel. Subscribe and bake along!',
+              },
+              {
                 icon: 'lucide:camera',
                 title: 'Food Photography',
                 desc: 'Beautiful food photography that makes you want to bake right away. All photos are taken by me.',
               },
-              {
-                icon: 'lucide:smartphone',
-                title: 'The Love Eya App',
-                desc: 'Over 500 exclusive recipes, video guides, and a smart shopping list — all in one place.',
-              },
+
             ].map(({ icon, title, desc }) => (
               <div key={title} className="text-center p-8 bg-brand-grayBg border border-brand-border">
                 <div className="w-12 h-12 rounded-full bg-brand-accentLight flex items-center justify-center text-brand-accent mx-auto mb-5">
@@ -115,14 +115,16 @@ export default function About() {
           <p className="text-brand-muted mb-6">Find me on social media</p>
           <div className="flex items-center justify-center gap-6 mb-10">
             {[
-              { icon: 'lucide:instagram', label: 'Instagram' },
-              { icon: 'lucide:pin', label: 'Pinterest' },
-              { icon: 'lucide:facebook', label: 'Facebook' },
-              { icon: 'lucide:youtube', label: 'YouTube' },
-            ].map(({ icon, label }) => (
+              { icon: 'lucide:youtube', label: 'YouTube', link: 'https://www.youtube.com/@eyaflavors' },
+              { icon: 'lucide:instagram', label: 'Instagram', link: 'https://www.instagram.com/eya_flavors/' },
+              { icon: 'lucide:facebook', label: 'Facebook', link: 'https://www.facebook.com/Eyaflavors/' },
+
+            ].map(({ icon, label, link }) => (
               <a
                 key={label}
-                href="#"
+                href={link}                 // <-- use the link here
+                target="_blank"             // opens in a new tab
+                rel="noopener noreferrer"   // security best practice
                 className="flex flex-col items-center gap-2 group text-brand-muted hover:text-brand-accent transition-colors"
               >
                 <div className="w-10 h-10 rounded-full bg-brand-grayBg border border-brand-border flex items-center justify-center group-hover:bg-brand-accentLight group-hover:border-brand-accent transition-colors">
@@ -133,7 +135,7 @@ export default function About() {
             ))}
           </div>
           <Link
-            to="/"
+            to="/category/pastries"
             className="inline-flex items-center gap-3 px-10 py-4 border border-brand-dark/10 bg-white hover:bg-brand-accentLight hover:border-brand-accent text-xs font-bold tracking-[0.25em] text-brand-dark uppercase transition-all duration-300"
           >
             Explore Recipes <Icon icon="lucide:arrow-right" width={12} />
