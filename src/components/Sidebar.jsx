@@ -37,7 +37,7 @@ export default function Sidebar() {
           <div className="absolute inset-0 rounded-full border border-brand-accent/50 -rotate-3" />
           <div className="w-full h-full rounded-full overflow-hidden border-[6px] border-brand-accentLight">
             <img
-              src='..//src/images/eyaflavorspic.PNG'
+              src='/images/eyaflavorspic.PNG'
               alt="Eya Profile"
               className="w-full h-full object-cover"
             />

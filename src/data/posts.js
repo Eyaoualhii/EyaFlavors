@@ -5,7 +5,7 @@ export const posts = [
     category: ' Eya Website',
     categorySlug: 'website',
     date: 'Feb 22, 2026',
-    image: '..//src/images/homepage.jpg',
+    image: '/images/homepage.jpg',
     imageAlt: 'Delicious cupcakes with frosting',
     excerpt:
       'After months of experimenting, tasting, and perfecting recipes, I’m thrilled to finally share everything with you! Discover over 20 exclusive recipes right here on the website...',
@@ -31,7 +31,7 @@ export const posts = [
     category: 'Cakes',
     categorySlug: 'sweet-treats',
     date: 'Feb 22, 2026',
-    image: '..//src/images/strawberrycake.jpg', // replace with your image
+    image: '/images/strawberrycake.JPG', // replace with your image
     imageAlt: 'Strawberry cake with mousseline cream and fresh strawberries',
     excerpt: 'A classic strawberry cake with soft sponge, rich vanilla mousseline cream, and light whipped cream for decoration.',
     likes: 2300,
@@ -80,7 +80,7 @@ export const posts = [
     category: 'Pastries',
     categorySlug: 'pastries',
     date: 'Feb 22, 2026',
-    image: '..//src/images/chocchips.jpg', // replace with your actual image path
+    image: '/images/chocchips.jpg', // replace with your actual image path
     imageAlt: 'Soft and chewy chocolate chip cookies with walnuts',
     excerpt: 'Classic soft and chewy chocolate chip cookies loaded with dark chocolate and walnuts. Perfect for every sweet craving!',
     likes: 1500,
@@ -124,7 +124,7 @@ export const posts = [
     category: 'Pastries',
     categorySlug: 'pastries',
     date: 'Feb 22, 2026',
-    image: '..//src/images/madeleines.jpg', // replace with your actual image path
+    image: '/images/madeleines.jpg', // replace with your actual image path
     imageAlt: 'Golden soft and buttery madeleines',
     excerpt: 'Classic French madeleines: soft, buttery, and lightly lemon-flavored. Perfect with tea or coffee!',
     likes: 664,
@@ -163,7 +163,7 @@ export const posts = [
     category: 'Pastries',
     categorySlug: 'pastries',
     date: 'Feb 22, 2026',
-    image: '..//src/images/cremebrulee.jpg', // replace with your actual image path
+    image: '/images/cremebrulee.jpg', // replace with your actual image path
     imageAlt: 'Classic creamy crème brûlée with caramelized top',
     excerpt: 'A rich and creamy classic French dessert with a perfectly caramelized sugar topping.',
     likes: 2200,
@@ -199,7 +199,7 @@ export const posts = [
     category: 'Pastries',
     categorySlug: 'pastries',
     date: 'Feb 22, 2026',
-    image: '..//src/images/brownies.jpg', // replace with your image
+    image: '/images/brownies.jpg', // replace with your image
     imageAlt: 'Chewy chocolate brownies with shiny top and crunchy pistachios',
     excerpt: 'Perfectly chewy inside with a shiny top and crunchy pistachios. Rich, chocolatey, and irresistible.',
     likes: 1200,
@@ -241,7 +241,7 @@ export const posts = [
     category: 'Cakes',
     categorySlug: 'sweet-treats',
     date: 'Feb 22, 2026',
-    image: '..//src/images/LemonCheesecake3.jpg', // replace with your image
+    image: '/images/LemonCheesecake3.jpg', // replace with your image
     imageAlt: 'Creamy pistachio lemon cheesecake with lemon curd topping',
     excerpt: 'A creamy no-bake pistachio cheesecake with a fresh lemon curd topping. Balanced, elegant, and irresistibly smooth.',
     likes: 1100,
@@ -292,7 +292,7 @@ export const posts = [
     category: 'Pastries',
     categorySlug: 'pastries',
     date: 'Feb 22, 2026',
-    image: '..//src/images/tiramisu.jpg', // replace with your image
+    image: '/images/tiramisu.jpg', // replace with your image
     imageAlt: 'Creamy homemade tiramisu dusted with cocoa powder',
     excerpt: 'Ultra-creamy homemade tiramisu with rich coffee flavor and a light mascarpone cream. Perfect for coffee lovers!',
     likes: 3500,
@@ -331,7 +331,7 @@ export const posts = [
     category: 'Ganache',
     categorySlug: 'sweet-ganache',
     date: 'Feb 22, 2026',
-    image: '..//src/images/lemonganache2.jpg',
+    image: '/images/lemonganache2.jpg',
     imageAlt: 'Smooth lemon white chocolate ganache',
     excerpt: 'A silky lemon ganache made with white chocolate—fresh, creamy, and perfect for cakes, tarts, and desserts.',
     likes: 2600,
@@ -369,7 +369,7 @@ export const posts = [
     category: 'Pastries',
     categorySlug: 'pastries',
     date: 'Feb 22, 2026',
-    image: '..//src/images/pistachiomousseline.jpg', // replace with your image
+    image: '/images/pistachiomousseline.jpg', // replace with your image
     imageAlt: 'Smooth pistachio mousseline cream in a bowl',
     excerpt: 'A rich and creamy pistachio mousseline, perfect for filling cakes, tarts, or pastries.',
     likes: 1200,
@@ -409,7 +409,7 @@ export const posts = [
     category: 'Ganache',
     categorySlug: 'sweet-ganache',
     date: 'Feb 22, 2026',
-    image: '..//src/images/darkchganache.jpg', // replace with your image
+    image: '/images/darkchganache.jpg', // replace with your image
     imageAlt: 'Rich dark chocolate ganache in a bowl',
     excerpt: 'A silky, rich dark chocolate ganache perfect for frosting, filling, or glazing cakes and pastries.',
     likes: 980,
@@ -444,7 +444,7 @@ export const posts = [
     category: 'Ganache',
     categorySlug: 'sweet-ganache',
     date: 'Feb 22, 2026',
-    image: '..//src/images/whitechocolatecupcakes.jpg', // replace with your image
+    image: '/images/whitechocolatecupcakes.jpg', // replace with your image
     imageAlt: 'Smooth white chocolate ganache in a bowl',
     excerpt: 'A silky, creamy white chocolate ganache perfect for frosting, filling, or glazing desserts.',
     likes: 100,
@@ -479,7 +479,7 @@ export const posts = [
     category: 'Cakes',
     categorySlug: 'sweet-treats',
     date: 'Feb 22, 2026',
-    image: '..//src/images/lemoncake.jpg', // replace with your image
+    image: '/images/lemoncake.jpg', // replace with your image
     imageAlt: 'Moist lemon cake with lemon frosting',
     excerpt: 'A moist and zesty lemon cake topped with a light, tangy lemon frosting.',
     likes: 1100,
@@ -524,7 +524,7 @@ export const posts = [
     category: 'Ganache',
     categorySlug: 'sweet-ganache',
     date: 'Feb 22, 2026',
-    image: '..//src/images/ChocolateCaramel.jpg', // replace with your image
+    image: '/images/ChocolateCaramel.jpg', // replace with your image
     imageAlt: 'Rich chocolate caramel ganache in a bowl',
     excerpt: 'A luscious chocolate caramel ganache perfect for filling, frosting, or glazing cakes and pastries.',
     likes: 1250,
@@ -559,7 +559,7 @@ export const posts = [
     category: 'Cakes',
     categorySlug: 'sweet-treats',
     date: 'Feb 22, 2026',
-    image: '..//src/images/lotus.jpg', // replace with your image
+    image: '/images/lotus.jpg', // replace with your image
     imageAlt: 'No-bake Lotus Biscoff cheesecake with creamy topping',
     excerpt: 'A creamy, no-bake cheesecake made with Lotus Biscoff biscuits, mascarpone, cream cheese, and a luscious Biscoff cream topping.',
     likes: 1350,
@@ -601,7 +601,7 @@ export const posts = [
     category: 'Cakes',
     categorySlug: 'sweet-treats',
     date: 'Feb 22, 2026',
-    image: '..//src/images/marblecake.jpg', // replace with your image
+    image: '/images/marblecake.jpg', // replace with your image
     imageAlt: 'Swirled marble cake with chocolate and vanilla layers',
     excerpt: 'A classic marble cake with beautifully swirled vanilla and chocolate layers, soft and moist.',
     likes: 1450,
@@ -642,7 +642,7 @@ export const posts = [
     category: 'Praline',
     categorySlug: 'sweet-praline',
     date: 'Feb 22, 2026',
-    image: '..//src/images/peanutpraline.jpg', // replace with your image
+    image: '/images/peanutpraline.jpg', // replace with your image
     imageAlt: 'Crunchy homemade peanut praliné',
     excerpt: 'A simple and delicious peanut praliné made from roasted peanuts and sugar, perfect for adding crunch to desserts.',
     likes: 980,
@@ -674,7 +674,7 @@ export const posts = [
     category: 'Praline',
     categorySlug: 'sweet-praline',
     date: 'Feb 22, 2026',
-    image: '..//src/images/hazulnutpraline.jpg', // replace with your image
+    image: '/images/hazulnutpraline.jpg', // replace with your image
     imageAlt: 'Crunchy homemade hazelnut praliné',
     excerpt: 'A rich and crunchy hazelnut praliné made from roasted hazelnuts, caramelized sugar, and a pinch of salt, perfect for desserts.',
     likes: 870,
@@ -707,7 +707,7 @@ export const posts = [
     category: 'Buche',
     categorySlug: 'buche',
     date: 'Feb 22, 2026',
-    image: '..//src/images/buchelemon.jpg',
+    image: '/images/buchelemon.jpg',
     imageAlt: 'Elegant lemon meringue dessert with Italian meringue',
     excerpt: 'An elegant lemon dessert with whipped lemon ganache, lemon confit, lemon crémeux, madeleine sponge, and Italian meringue.',
     likes: 1500,
@@ -772,7 +772,7 @@ export const posts = [
     category: 'Pastries',
     categorySlug: 'pastries',
     date: 'Feb 22, 2026',
-    image: '..//src/images/softpeanutbiscuit.jpg', // replace with your image
+    image: '/images/softpeanutbiscuit.jpg', // replace with your image
     imageAlt: 'Soft peanut biscuit topped with peanut crunch',
     excerpt: 'A light and airy peanut biscuit paired with a crunchy peanut topping for extra texture and flavor.',
     likes: 1200,
@@ -817,7 +817,7 @@ export const posts = [
     category: 'Buche',
     categorySlug: 'buche',
     date: 'Feb 22, 2026',
-    image: '..//src/images/pistachioraspberrybuche.jpg', // replace with your image
+    image: '/images/pistachioraspberrybuche.jpg', // replace with your image
     imageAlt: 'Pistachio raspberry buche with ganache and praline',
     excerpt: 'A luxurious pistachio and raspberry buche with layers of ganache, bavarian cream, strawberry confit, and crunchy pistachio praline.',
     likes: 6300,

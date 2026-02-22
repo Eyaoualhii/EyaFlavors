@@ -27,7 +27,7 @@ export default function Contact() {
         const bodyContent = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
 
         // Use a direct Gmail Compose link since mailto: is causing issues
-        const gmailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=oualhieya02@gmail.com&su=${encodeURIComponent(subject || 'Contact from Eya Flavors')}&body=${encodeURIComponent(bodyContent)}`
+        const gmailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=eyaflavors@gmail.com&su=${encodeURIComponent(subject || 'Contact from Eya Flavors')}&body=${encodeURIComponent(bodyContent)}`
 
         window.open(gmailLink, '_blank')
 
@@ -74,7 +74,7 @@ export default function Contact() {
                                 </div>
                                 <div>
                                     <h3 className="text-[10px] font-bold tracking-[0.2em] uppercase text-brand-dark mb-1">Email</h3>
-                                    <p className="text-brand-muted text-sm tracking-wide">oualhieya02@gmail.com</p>
+                                    <p className="text-brand-muted text-sm tracking-wide">eyaflavors@gmail.com</p>
                                 </div>
                             </div>
 

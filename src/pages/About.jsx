@@ -27,7 +27,7 @@ export default function About() {
               <div className="absolute inset-0 rounded-full border border-brand-accent/50 -rotate-3" />
               <div className="w-full h-full rounded-full overflow-hidden border-[8px] border-brand-accentLight">
                 <img
-                  src='..//src/images/eyaflavorspic.PNG'
+                  src='/images/eyaflavorspic.PNG'
                   alt="Eya"
                   className="w-full h-full object-cover"
                 />
