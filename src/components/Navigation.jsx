@@ -10,11 +10,12 @@ export default function Navigation() {
 
   const navLinks = [
     { label: 'Home', href: '/' },
-    { label: 'Love Eya', href: '/category/love-eya-app' },
-    { label: 'Recipes', href: '/category/pastries', hasDropdown: true },
+    //{ label: 'Love Eya', href: '/category/love-eya-app' },
+    { label: 'Recipes', href: '/category/recipes' },
+    { label: 'Search', href: '/search' },
     { label: 'News & Media', href: '/category/news' },
     { label: 'About Me', href: '/about' },
-    { label: 'Contact', href: '/search' },
+    { label: 'Contact', href: '/contact' }
   ]
 
   return (
@@ -50,31 +51,19 @@ export default function Navigation() {
             <Link
               key={link.href}
               to={link.href}
-              className={`transition-colors relative group flex items-center gap-1 ${
-                isActive(link.href) ? 'text-brand-accent' : 'hover:text-brand-accent'
-              }`}
+              className={`transition-colors relative group flex items-center gap-1 ${isActive(link.href) ? 'text-brand-accent' : 'hover:text-brand-accent'
+                }`}
             >
               {link.label}
               {link.hasDropdown && <Icon icon="lucide:chevron-down" width={12} />}
               {!link.hasDropdown && (
                 <span
-                  className={`absolute -bottom-1 left-0 h-[1px] bg-brand-accent transition-all ${
-                    isActive(link.href) ? 'w-full' : 'w-0 group-hover:w-full'
-                  }`}
+                  className={`absolute -bottom-1 left-0 h-[1px] bg-brand-accent transition-all ${isActive(link.href) ? 'w-full' : 'w-0 group-hover:w-full'
+                    }`}
                 />
               )}
             </Link>
           ))}
-        </div>
-
-        {/* Social Icons (Desktop) */}
-        <div className="hidden lg:flex items-center gap-4 text-brand-muted absolute right-12 top-1/2 -translate-y-1/2">
-          <a href="#" className="hover:text-brand-accent transition-colors">
-            <Icon icon="lucide:instagram" width={14} />
-          </a>
-          <a href="#" className="hover:text-brand-accent transition-colors">
-            <Icon icon="lucide:pin" width={14} />
-          </a>
         </div>
       </nav>
     </div>

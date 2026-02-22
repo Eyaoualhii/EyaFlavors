@@ -37,7 +37,7 @@ export default function Sidebar() {
           <div className="absolute inset-0 rounded-full border border-brand-accent/50 -rotate-3" />
           <div className="w-full h-full rounded-full overflow-hidden border-[6px] border-brand-accentLight">
             <img
-              src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+              src='..//src/images/eyaflavorspic.PNG'
               alt="Eya Profile"
               className="w-full h-full object-cover"
             />
@@ -45,8 +45,8 @@ export default function Sidebar() {
         </div>
 
         <p className="text-brand-muted text-sm leading-7 mb-6 font-light px-4">
-          Hi! I'm Eya. I'm a recipe developer, food stylist and photographer. This blog is my creative outlet
-          where I share my passion for baking.
+          Hi! I'm Eya, a content creator and passionate pastry chef. This blog is
+          my little corner to share the joy of baking and showcase all my creative, delicious recipes in one place.
         </p>
         <div className="text-brand-accent font-serif italic text-3xl">Eya Flavors</div>
       </div>
@@ -75,7 +75,7 @@ export default function Sidebar() {
         </form>
       </div>
 
-      {/* Newsletter Widget */}
+      { /*  Newsletter Widget
       <div className="bg-brand-grayBg p-8 md:p-10 text-center border border-brand-border">
         <h3 className="text-xs font-bold tracking-[0.2em] text-brand-dark uppercase mb-2">Join The Club</h3>
         <p className="text-[10px] text-brand-muted uppercase tracking-widest mb-8">Get sweet emails</p>
@@ -94,7 +94,7 @@ export default function Sidebar() {
             Subscribe
           </button>
         </form>
-      </div>
+      </div>*/ }
 
       {/* Categories Widget */}
       <div>
@@ -136,13 +136,15 @@ export default function Sidebar() {
         </div>
         <div className="flex flex-col gap-1">
           {[
-            { icon: 'lucide:facebook', label: 'Facebook' },
-            { icon: 'lucide:instagram', label: 'Instagram' },
-            { icon: 'lucide:pin', label: 'Pinterest' },
-          ].map(({ icon, label }) => (
+            { icon: 'lucide:facebook', label: 'Facebook', link: 'https://www.facebook.com/Eyaflavors/' },
+            { icon: 'lucide:instagram', label: 'Instagram', link: 'https://www.instagram.com/eya_flavors/' },
+            { icon: 'lucide:youtube', label: 'YouTube', link: 'https://www.youtube.com/@eyaflavors' },
+          ].map(({ icon, label, link }) => (
             <a
               key={label}
-              href="#"
+              href={link}
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center gap-4 p-3 hover:bg-brand-grayBg transition-colors text-xs font-bold tracking-widest uppercase text-brand-dark group"
             >
               <div className="w-8 h-8 rounded-full bg-brand-accentLight flex items-center justify-center text-brand-accent group-hover:bg-brand-accent group-hover:text-white transition-colors">
@@ -154,12 +156,12 @@ export default function Sidebar() {
         </div>
       </div>
 
-      {/* Ad Placeholder */}
+      {/* Ad Placeholder 
       <div className="w-full aspect-[3/4] bg-brand-grayBg flex flex-col items-center justify-center border border-brand-border text-brand-muted p-8 text-center">
         <span className="text-[10px] uppercase tracking-widest mb-2">Advertisement</span>
         <div className="w-12 h-[1px] bg-brand-muted/30 mb-4" />
         <p className="font-serif italic text-sm">Space for your sponsors</p>
-      </div>
+      </div>*/}
     </aside>
   )
 }

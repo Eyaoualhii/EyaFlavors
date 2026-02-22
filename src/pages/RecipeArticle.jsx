@@ -163,9 +163,18 @@ export default function RecipeArticle() {
             </button>
             <div className="flex items-center gap-4 border-l border-brand-border pl-6">
               <span className="italic font-serif mr-2">Share:</span>
-              {['lucide:facebook', 'lucide:twitter', 'lucide:pin'].map((icon) => (
-                <a key={icon} href="#" className="hover:text-brand-accent transition-colors">
-                  <Icon icon={icon} width={14} />
+              {[
+                { icon: 'lucide:facebook', link: 'https://www.facebook.com/Eyaflavors/' },
+                { icon: 'lucide:youtube', link: 'https://www.youtube.com/@eyaflavors' },
+                { icon: 'lucide:instagram', link: 'https://www.instagram.com/eya_flavors/' },
+              ].map(({ icon, link }) => (
+                <a
+                  key={icon}
+                  href={link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-brand-accent transition-colors"
+                >  <Icon icon={icon} width={14} />
                 </a>
               ))}
             </div>
