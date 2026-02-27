@@ -1,11 +1,13 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Icon } from '@iconify/react'
+import { useTranslation } from 'react-i18next'
 import Navigation from '../components/Navigation'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 
 export default function Contact() {
+    const { t } = useTranslation()
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -46,25 +48,24 @@ export default function Contact() {
             <div className="max-w-5xl mx-auto px-6 lg:px-12 py-16 md:py-24">
                 {/* Breadcrumb */}
                 <nav className="flex items-center gap-2 text-[10px] uppercase tracking-widest text-brand-muted mb-12">
-                    <Link to="/" className="hover:text-brand-accent transition-colors">Home</Link>
+                    <Link to="/" className="hover:text-brand-accent transition-colors">{t('nav.home')}</Link>
                     <span>/</span>
-                    <span className="text-brand-dark">Contact</span>
+                    <span className="text-brand-dark">{t('contact.breadcrumb')}</span>
                 </nav>
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
                     {/* Contact Info */}
                     <div>
                         <span className="text-[10px] font-semibold tracking-[0.4em] uppercase text-brand-muted block mb-3">
-                            Get in touch
+                            {t('contact.tagline')}
                         </span>
                         <h1 className="font-serif italic text-5xl md:text-6xl text-brand-dark font-light mb-8">
-                            Let's Connect
+                            {t('contact.title')}
                         </h1>
                         <div className="h-[1px] w-16 bg-brand-accent mb-8" />
 
                         <p className="text-brand-muted leading-loose mb-10">
-                            Have a question about a recipe? Want to collaborate or just say hi?
-                            I'd love to hear from you! Fill out the form or reach out through my social media.
+                            {t('contact.subtitle')}
                         </p>
 
                         <div className="space-y-8">
@@ -73,7 +74,7 @@ export default function Contact() {
                                     <Icon icon="lucide:mail" width={20} />
                                 </div>
                                 <div>
-                                    <h3 className="text-[10px] font-bold tracking-[0.2em] uppercase text-brand-dark mb-1">Email</h3>
+                                    <h3 className="text-[10px] font-bold tracking-[0.2em] uppercase text-brand-dark mb-1">{t('contact.email_label')}</h3>
                                     <p className="text-brand-muted text-sm tracking-wide">eyaflavors@gmail.com</p>
                                 </div>
                             </div>
@@ -83,7 +84,7 @@ export default function Contact() {
                                     <Icon icon="lucide:instagram" width={20} />
                                 </div>
                                 <div>
-                                    <h3 className="text-[10px] font-bold tracking-[0.2em] uppercase text-brand-dark mb-1">Instagram</h3>
+                                    <h3 className="text-[10px] font-bold tracking-[0.2em] uppercase text-brand-dark mb-1">{t('contact.insta_label')}</h3>
                                     <p className="text-brand-muted text-sm tracking-wide">@eya_flavors</p>
                                 </div>
                             </div>
@@ -93,7 +94,7 @@ export default function Contact() {
                                     <Icon icon="lucide:youtube" width={20} />
                                 </div>
                                 <div>
-                                    <h3 className="text-[10px] font-bold tracking-[0.2em] uppercase text-brand-dark mb-1">YouTube</h3>
+                                    <h3 className="text-[10px] font-bold tracking-[0.2em] uppercase text-brand-dark mb-1">{t('contact.yt_label')}</h3>
                                     <p className="text-brand-muted text-sm tracking-wide">Eya Flavors</p>
                                 </div>
                             </div>
@@ -105,7 +106,7 @@ export default function Contact() {
                         <form onSubmit={handleSubmit} className="space-y-6">
                             <div>
                                 <label htmlFor="name" className="text-[10px] font-bold tracking-[0.2em] uppercase text-brand-dark block mb-2">
-                                    Full Name
+                                    {t('contact.form_name')}
                                 </label>
                                 <input
                                     type="text"
@@ -115,13 +116,13 @@ export default function Contact() {
                                     value={formData.name}
                                     onChange={handleChange}
                                     className="w-full bg-white border border-brand-border px-4 py-3 text-sm focus:outline-none focus:border-brand-accent transition-colors"
-                                    placeholder="Enter your name"
+                                    placeholder={t('contact.placeholder_name')}
                                 />
                             </div>
 
                             <div>
                                 <label htmlFor="email" className="text-[10px] font-bold tracking-[0.2em] uppercase text-brand-dark block mb-2">
-                                    Email Address
+                                    {t('contact.form_email')}
                                 </label>
                                 <input
                                     type="email"
@@ -131,13 +132,13 @@ export default function Contact() {
                                     value={formData.email}
                                     onChange={handleChange}
                                     className="w-full bg-white border border-brand-border px-4 py-3 text-sm focus:outline-none focus:border-brand-accent transition-colors"
-                                    placeholder="name@example.com"
+                                    placeholder={t('contact.placeholder_email')}
                                 />
                             </div>
 
                             <div>
                                 <label htmlFor="subject" className="text-[10px] font-bold tracking-[0.2em] uppercase text-brand-dark block mb-2">
-                                    Subject
+                                    {t('contact.form_subject')}
                                 </label>
                                 <input
                                     type="text"
@@ -146,13 +147,13 @@ export default function Contact() {
                                     value={formData.subject}
                                     onChange={handleChange}
                                     className="w-full bg-white border border-brand-border px-4 py-3 text-sm focus:outline-none focus:border-brand-accent transition-colors"
-                                    placeholder="What is this about?"
+                                    placeholder={t('contact.placeholder_subject')}
                                 />
                             </div>
 
                             <div>
                                 <label htmlFor="message" className="text-[10px] font-bold tracking-[0.2em] uppercase text-brand-dark block mb-2">
-                                    Message
+                                    {t('contact.form_message')}
                                 </label>
                                 <textarea
                                     id="message"
@@ -162,7 +163,7 @@ export default function Contact() {
                                     value={formData.message}
                                     onChange={handleChange}
                                     className="w-full bg-white border border-brand-border px-4 py-3 text-sm focus:outline-none focus:border-brand-accent transition-colors resize-none"
-                                    placeholder="Your message here..."
+                                    placeholder={t('contact.placeholder_message')}
                                 ></textarea>
                             </div>
 
@@ -171,7 +172,7 @@ export default function Contact() {
                                 disabled={status === 'sending'}
                                 className={`w-full text-[10px] font-bold tracking-[0.3em] uppercase py-4 transition-colors duration-300 ${status === 'sent' ? 'bg-green-600 text-white' : 'bg-brand-dark text-white hover:bg-brand-accent'}`}
                             >
-                                {status === 'sending' ? 'Sending...' : status === 'sent' ? 'Sent!' : 'Send Message'}
+                                {status === 'sending' ? t('contact.btn_sending') : status === 'sent' ? t('contact.btn_sent') : t('contact.btn_send')}
                             </button>
                         </form>
                     </div>

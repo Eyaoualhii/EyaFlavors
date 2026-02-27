@@ -1,6 +1,9 @@
 import { Link } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 
 export default function Header() {
+  const { t } = useTranslation()
+
   return (
     <header className="w-full py-12 md:py-20 flex flex-col items-center justify-center border-b border-brand-border/60 relative overflow-hidden">
       <div className="absolute top-0 left-0 w-full h-full opacity-[0.03] pointer-events-none">
@@ -9,7 +12,7 @@ export default function Header() {
       </div>
       <Link to="/" className="text-center flex flex-col items-center z-10 group">
         <span className="text-[10px] md:text-xs font-semibold tracking-[0.4em] uppercase text-brand-muted mb-3 group-hover:text-brand-accent transition-colors">
-          The Art of Baking
+          {t('header.tagline')}
         </span>
         <h1 className="font-serif italic text-6xl md:text-8xl lg:text-9xl text-brand-dark font-light tracking-tight leading-none relative">
           Flavors
