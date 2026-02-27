@@ -3,6 +3,7 @@ export const posts = [
     slug: 'launch-day-the-new-baking-app-is-here',
     title: 'Welcome to Eya Flavors Where creativity meets sweetness',
     title_ar: 'مرحباً بكم في إية فليفرز حيث يلتقي الإبداع بالحلاوة',
+    title_fr: 'Bienvenue sur Eya Flavors – Où la créativité rencontre la douceur',
     category: ' Eya Website',
     categorySlug: 'website',
     date: 'Feb 22, 2026',
@@ -37,12 +38,25 @@ export const posts = [
 
   <p>لا أطيق الانتظار حتى تستكشفوا هذه الوصفات وتجربوا نكهات جديدة وتخبزوا بجانبي هنا على الموقع. دعونا نبتكر شيئاً لذيذاً معاً!</p>
 `,
+    content_fr: `
+  <p>Après des mois d'expérimentation, de dégustation et de perfectionnement, je suis ravie de tout partager avec vous ! Sur ce site, vous trouverez plus de 20 recettes exclusives que vous ne trouverez nulle part ailleurs. Des pâtisseries françaises classiques aux desserts modernes, chaque recette a été testée (et goûtée !) plusieurs fois pour s'assurer qu'elle fonctionne parfaitement dans votre cuisine.</p>
+
+  <h2>Ce que vous trouverez sur le site :</h2>
+  <ul>
+    <li>Plus de 20 recettes exclusives avec des instructions et des photos étape par étape</li>
+    <li>Des astuces et conseils pour pâtisser comme un professionnel à la maison</li>
+    <li>Des idées de desserts saisonniers et tendance</li>
+  </ul>
+
+  <p>J'ai hâte que vous exploriez ces recettes, découvriez de nouvelles saveurs et pâtisseriez avec moi ici sur le site. Créons ensemble quelque chose de délicieux !</p>
+`,
   },
 
   {
     slug: 'strawberry-cake-fraisier',
     title: 'Perfect Strawberry Cake ',
     title_ar: 'كيكة الفراولة المثالية (فرازييه)',
+    title_fr: 'Gâteau Fraisier Parfait',
     category: 'Cakes',
     categorySlug: 'sweet-treats',
     date: 'Feb 22, 2026',
@@ -50,6 +64,7 @@ export const posts = [
     imageAlt: 'Strawberry cake with mousseline cream and fresh strawberries',
     excerpt: 'A classic strawberry cake with soft sponge, rich vanilla mousseline cream, and light whipped cream for decoration.',
     excerpt_ar: 'كيكة فراولة كلاسيكية مع طبقات هشة، كريمة موسلين الفانيليا الغنية، وكريمة مخفوقة خفيفة للتزيين.',
+    excerpt_fr: 'Un gâteau fraisier classique avec une génoise moelleuse, une riche crème mousseline à la vanille et une chantilly légère pour la décoration.',
     likes: 2300,
     badge: 'Popular',
     prepTime: '45 min',
@@ -89,6 +104,22 @@ export const posts = [
       '300 جم كريمة ثقيلة (30٪ دسم)',
       '30 جم سكر بودرة'
     ],
+    ingredients_fr: [
+      '5 œufs',
+      '5 cuillères à soupe de sucre',
+      '10 g de sucre vanillé',
+      '5 cuillères à soupe de farine',
+      '1 litre de lait',
+      '400 g de beurre (à température ambiante)',
+      'Vanille',
+      '8 jaunes d\'œufs',
+      '200 g de sucre',
+      '100 g de fécule de maïs',
+      '100 g d\'eau',
+      '100 g de sucre',
+      '300 g de crème liquide entière (30% MG)',
+      '30 g de sucre glace'
+    ],
     instructions: [
       'For the sponge cake: Whisk eggs, sugar, and vanilla sugar until pale and fluffy.',
       'Gently fold in the flour and bake in a preheated oven at 175°C for about 25 minutes. Let cool completely.',
@@ -113,6 +144,18 @@ export const posts = [
       'اخفقي الكريمة الثقيلة مع السكر البودرة واستخدميها للتزيين.',
       'بردي الكيكة لمدة 4 ساعات على الأقل قبل التقديم.'
     ],
+    instructions_fr: [
+      'Pour la génoise : Fouettez les œufs, le sucre et le sucre vanillé jusqu\'à ce que le mélange blanchisse et soit mousseux.',
+      'Incorporez délicatement la farine et faites cuire dans un four préchauffé à 175°C pendant environ 25 minutes. Laissez refroidir complètement.',
+      'Pour la crème mousseline : Faites chauffer le lait avec la vanille.',
+      'Fouettez les jaunes d\'œufs, le sucre et la fécule de maïs. Versez le lait chaud sur le mélange et faites cuire jusqu\'à épaississement.',
+      'Laissez refroidir complètement la crème pâtissière, puis incorporez le beurre progressivement jusqu\'à l\'obtention d\'une crème lisse et onctueuse.',
+      'Pour le sirop : Faites bouillir l\'eau et le sucre ensemble, puis laissez refroidir.',
+      'Imbibez légèrement les couches de génoise avec le sirop.',
+      'Montez le gâteau avec la crème mousseline et les fraises fraîches entre les couches.',
+      'Montez la crème liquide avec le sucre glace et utilisez-la pour la décoration.',
+      'Réfrigérez le gâteau pendant au moins 4 heures avant de servir.'
+    ],
     content: `
     <p>This strawberry cake is elegant, fresh, and perfectly balanced. Soft sponge layers are soaked with syrup, filled with rich vanilla mousseline cream, and finished with light whipped cream.</p>
     <p>A timeless dessert ideal for birthdays, celebrations, and spring gatherings.</p>
@@ -120,6 +163,10 @@ export const posts = [
     content_ar: `
     <p>هذه الكيكة بالفراولة أنيقة وطازجة ومتوازنة تماماً. طبقات هشة مشربة بالشراب، محشوة بكريمة موسلين الفانيليا الغنية، ومغطاة بكريمة مخفوقة خفيفة.</p>
     <p>حلوى خالدة مثالية لأعياد الميلاد والاحتفالات وتجمعات الربيع.</p>
+  `,
+    content_fr: `
+    <p>Ce gâteau fraisier est élégant, frais et parfaitement équilibré. Les couches de génoise moelleuse sont imbibées de sirop, garnies d\'une riche crème mousseline à la vanille et finies d\'une chantilly légère.</p>
+    <p>Un dessert intemporel idéal pour les anniversaires, les célébrations et les réunions printanières.</p>
   `,
   },
   {
