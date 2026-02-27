@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { Icon } from '@iconify/react'
+import { useTranslation } from 'react-i18next'
 import Navigation from '../components/Navigation'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
@@ -10,6 +11,7 @@ import { posts, categories } from '../data/posts'
 const POSTS_PER_PAGE = 6
 
 export default function Category() {
+  const { t, i18n } = useTranslation()
   const { slug } = useParams()
   const [currentPage, setCurrentPage] = useState(1)
 
@@ -47,24 +49,27 @@ export default function Category() {
         <main className="w-full lg:w-[68%]">
           {/* Breadcrumb */}
           <nav className="flex items-center gap-2 text-[10px] uppercase tracking-widest text-brand-muted mb-8">
-            <Link to="/" className="hover:text-brand-accent transition-colors">Home</Link>
+            <Link to="/" className="hover:text-brand-accent transition-colors">{t('nav.home')}</Link>
             <span>/</span>
-            <span className="text-brand-dark capitalize">{categoryName}</span>
+            <span className="text-brand-dark capitalize">{t(`categories.${slug}`)}</span>
           </nav>
 
           {/* Category Header */}
           <header className="text-center mb-14">
             <span className="text-[10px] font-semibold tracking-[0.4em] uppercase text-brand-muted">
-              Browse Category
+              {t('common.browse_category')}
             </span>
             <h1 className="font-serif italic text-5xl md:text-6xl text-brand-dark font-light mt-3 mb-4 capitalize">
-              {categoryName}
+              {t(`categories.${slug}`)}
             </h1>
             <div className="h-[1px] w-16 bg-brand-accent mx-auto" />
             {slug !== 'news' && (
-              <p className="text-brand-muted text-sm mt-4">{allDisplayPosts.length} recipes</p>
+              <p className="text-brand-muted text-sm mt-4">
+                {t('common.recipes_count', { count: allDisplayPosts.length })}
+              </p>
             )}
           </header>
+
           {/* YouTube Shorts — only on News & Media */}
           {slug === 'news' && (
             <section className="mb-16">
@@ -85,7 +90,6 @@ export default function Category() {
                   'https://www.youtube.com/embed/Ex88rAwGnGM',
                   'https://www.youtube.com/embed/YIH3UBL4TOI',
                   'https://www.youtube.com/embed/jdYBYNyaZug',
-
                 ].map((src, i) => (
                   <div
                     key={i}
@@ -111,7 +115,7 @@ export default function Category() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-[10px] font-bold tracking-[0.25em] uppercase text-brand-dark hover:text-brand-accent transition-colors border border-brand-border px-6 py-3 hover:border-brand-accent"
                 >
-                  View All Shorts on YouTube
+                  {t('common.view_all_shorts')}
                   <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
                 </a>
               </div>
@@ -123,58 +127,59 @@ export default function Category() {
             allDisplayPosts.length > 0 ? (
               <>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-                  {currentPosts.map((post) => (
-                    <article key={post.slug} className="group flex flex-col">
-                      {/* Image */}
-                      <div className="w-full aspect-[4/3] overflow-hidden mb-5 relative">
-                        <Link to={`/recipe/${post.slug}`} className="block w-full h-full">
-                          <img
-                            src={post.image}
-                            alt={post.imageAlt}
-                            className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
-                          />
-                        </Link>
-                        {post.badge && (
-                          <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm px-3 py-1 text-[10px] font-bold tracking-widest uppercase text-brand-dark">
-                            {post.badge}
-                          </div>
-                        )}
-                      </div>
+                  {currentPosts.map((post) => {
+                    const currentLang = i18n.language
+                    const displayTitle = currentLang === 'ar' && post.title_ar ? post.title_ar : (currentLang === 'fr' && post.title_fr ? post.title_fr : post.title)
+                    const displayExcerpt = currentLang === 'ar' && post.excerpt_ar ? post.excerpt_ar : (currentLang === 'fr' && post.excerpt_fr ? post.excerpt_fr : post.excerpt)
 
-                      {/* Meta */}
-                      <div className="flex items-center gap-3 text-[10px] font-bold tracking-[0.2em] uppercase mb-3">
-                        <Link
-                          to={`/category/${post.categorySlug}`}
-                          className="text-brand-accent hover:text-brand-accentHover transition-colors"
-                        >
-                          {post.category}
-                        </Link>
-                        <span className="w-1 h-1 rounded-full bg-brand-border" />
-                        <span className="text-brand-muted font-normal">{post.date}</span>
-                      </div>
+                    return (
+                      <article key={post.slug} className="group flex flex-col">
+                        <div className="w-full aspect-[4/3] overflow-hidden mb-5 relative">
+                          <Link to={`/recipe/${post.slug}`} className="block w-full h-full">
+                            <img
+                              src={post.image}
+                              alt={post.imageAlt}
+                              className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                            />
+                          </Link>
+                          {post.badge && (
+                            <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm px-3 py-1 text-[10px] font-bold tracking-widest uppercase text-brand-dark">
+                              {post.badge}
+                            </div>
+                          )}
+                        </div>
 
-                      {/* Title */}
-                      <h2 className="font-serif font-light text-2xl md:text-3xl text-brand-dark leading-snug mb-3">
+                        <div className="flex items-center gap-3 text-[10px] font-bold tracking-[0.2em] uppercase mb-3">
+                          <Link
+                            to={`/category/${post.categorySlug}`}
+                            className="text-brand-accent hover:text-brand-accentHover transition-colors"
+                          >
+                            {t(`categories.${post.categorySlug}`)}
+                          </Link>
+                          <span className="w-1 h-1 rounded-full bg-brand-border" />
+                          <span className="text-brand-muted font-normal">{post.date}</span>
+                        </div>
+
+                        <h2 className="font-serif font-light text-2xl md:text-3xl text-brand-dark leading-snug mb-3">
+                          <Link
+                            to={`/recipe/${post.slug}`}
+                            className="hover:text-brand-accent transition-colors duration-300"
+                          >
+                            {displayTitle}
+                          </Link>
+                        </h2>
+
+                        <p className="text-brand-muted text-sm leading-relaxed mb-4 flex-1">{displayExcerpt}</p>
+
                         <Link
                           to={`/recipe/${post.slug}`}
-                          className="hover:text-brand-accent transition-colors duration-300"
+                          className="inline-flex items-center gap-2 text-[10px] font-bold tracking-[0.2em] uppercase text-brand-dark hover:text-brand-accent transition-colors"
                         >
-                          {post.title}
+                          {t('common.read_more')} <Icon icon="lucide:arrow-right" width={12} />
                         </Link>
-                      </h2>
-
-                      {/* Excerpt */}
-                      <p className="text-brand-muted text-sm leading-relaxed mb-4 flex-1">{post.excerpt}</p>
-
-                      {/* Read More */}
-                      <Link
-                        to={`/recipe/${post.slug}`}
-                        className="inline-flex items-center gap-2 text-[10px] font-bold tracking-[0.2em] uppercase text-brand-dark hover:text-brand-accent transition-colors"
-                      >
-                        Keep Reading <Icon icon="lucide:arrow-right" width={12} />
-                      </Link>
-                    </article>
-                  ))}
+                      </article>
+                    )
+                  })}
                 </div>
 
                 {/* Pagination */}
@@ -185,7 +190,7 @@ export default function Category() {
                       disabled={currentPage === 1}
                       className={`text-brand-muted hover:text-brand-dark transition-colors mr-4 ${currentPage === 1 ? 'opacity-30 cursor-not-allowed' : ''}`}
                     >
-                      Previous
+                      {t('common.previous')}
                     </button>
 
                     {Array.from({ length: totalPages }, (_, i) => i + 1).map((p) => (
@@ -193,8 +198,8 @@ export default function Category() {
                         key={p}
                         onClick={() => setCurrentPage(p)}
                         className={`w-10 h-10 flex items-center justify-center rounded-sm transition-all ${currentPage === p
-                            ? 'bg-brand-accentLight text-brand-dark border border-brand-accent font-bold'
-                            : 'hover:bg-brand-grayBg border border-transparent hover:border-brand-border'
+                          ? 'bg-brand-accentLight text-brand-dark border border-brand-accent font-bold'
+                          : 'hover:bg-brand-grayBg border border-transparent hover:border-brand-border'
                           }`}
                       >
                         {p}
@@ -206,7 +211,7 @@ export default function Category() {
                       disabled={currentPage === totalPages}
                       className={`text-brand-dark hover:text-brand-accent transition-colors ml-4 flex items-center gap-2 ${currentPage === totalPages ? 'opacity-30 cursor-not-allowed' : ''}`}
                     >
-                      Next <Icon icon="lucide:arrow-right" width={14} />
+                      {t('common.next')} <Icon icon="lucide:arrow-right" width={14} />
                     </button>
                   </div>
                 )}

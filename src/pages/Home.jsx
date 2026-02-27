@@ -6,11 +6,13 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 import PostCard from '../components/PostCard'
 import Sidebar from '../components/Sidebar'
+import { useTranslation } from 'react-i18next'
 import { posts } from '../data/posts'
 
 const POSTS_PER_PAGE = 6
 
 export default function Home() {
+  const { t } = useTranslation()
   const [currentPage, setCurrentPage] = useState(1)
 
   // Filter out website posts for the homepage feed
@@ -47,7 +49,7 @@ export default function Home() {
                 disabled={currentPage === 1}
                 className={`text-brand-muted hover:text-brand-dark transition-colors mr-4 ${currentPage === 1 ? 'opacity-30 cursor-not-allowed' : ''}`}
               >
-                Previous
+                {t('common.previous', 'Previous')}
               </button>
 
               {Array.from({ length: totalPages }, (_, i) => i + 1).map((p) => (
@@ -68,7 +70,7 @@ export default function Home() {
                 disabled={currentPage === totalPages}
                 className={`text-brand-dark hover:text-brand-accent transition-colors ml-4 flex items-center gap-2 ${currentPage === totalPages ? 'opacity-30 cursor-not-allowed' : ''}`}
               >
-                Next <Icon icon="lucide:arrow-right" width={14} />
+                {t('common.next', 'Next')} <Icon icon="lucide:arrow-right" width={14} />
               </button>
             </div>
           )}

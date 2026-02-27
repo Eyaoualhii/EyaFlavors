@@ -1,0 +1,110 @@
+{
+    "nav": {
+        "home": "Home",
+        "recipes": "Recipes",
+        "sweets": "Sweet Treats",
+        "about": "About",
+        "contact": "Contact",
+        "news": "News & Media"
+    },
+    "header": {
+        "tagline": "Elegant Pastry & Culinary Art",
+        "subtitle": "A collection of curated recipes and pastry inspiration from Eya's kitchen."
+    },
+    "sidebar": {
+        "welcome_title": "About Me",
+        "welcome_text": "Welcome to Eya Flavors! I'm a passionate pastry chef sharing my favorite recipes, techniques, and culinary journeys with you.",
+        "about_me": "More About Me",
+        "search_title": "Search",
+        "search_placeholder": "Search recipes...",
+        "categories_title": "Categories",
+        "latest_posts": "Latest Recipes",
+        "social_title": "Follow Me"
+    },
+    "footer": {
+        "rights": "All rights reserved.",
+        "links": "Quick Links",
+        "about_brief": "Exploring the art of fine pastry and sharing the joy of baking with the world."
+    },
+    "common": {
+        "read_more": "Keep Reading",
+        "recipes_count": "{{count}} recipes",
+        "browse_category": "Browse Category",
+        "view_all_shorts": "View All Shorts on YouTube"
+    },
+    "about": {
+        "breadcrumb": "About Eya",
+        "creator_tag": "About the creator",
+        "title": "Hi, I'm Eya",
+        "bio_p1": "Hi! I'm Eya, the heart behind Eya Flavors. Ever since I was a child, I’ve loved the magic of the kitchen, especially baking cookies, cakes, and sweet treats that make people smile. Baking has always been my way of expressing creativity, experimenting with flavors, and turning simple ingredients into unforgettable experiences.",
+        "bio_p2": "Over the years, my passion grew into Eya Flavors, a place where I share my love for pastries, unique recipes, and the joy of creating something delicious from scratch. From classic French techniques to modern twists, each recipe is crafted with care and a touch of creativity.",
+        "bio_p3": "Whether you’re a beginner or an experienced baker, I hope my recipes inspire you to get creative in the kitchen and savor the sweet rewards of baking!",
+        "mission_title": "My Mission",
+        "mission_text": "To make the art of baking accessible, joyful, and beautiful for everyone.",
+        "what_i_do": "What I Do",
+        "feat_recipe_title": "Recipe Development",
+        "feat_recipe_desc": "I create and test every recipe multiple times to ensure it works perfectly in your home kitchen.",
+        "feat_youtube_title": "Share on YouTube",
+        "feat_youtube_desc": "All my recipes come to life in easy-to-follow video tutorials on my YouTube channel. Subscribe and bake along!",
+        "feat_photo_title": "Food Photography",
+        "feat_photo_desc": "Beautiful food photography that makes you want to bake right away. All photos are taken by me.",
+        "find_me": "Find me on social media",
+        "explore": "Explore Recipes"
+    },
+    "contact": {
+        "breadcrumb": "Contact",
+        "tagline": "Get in touch",
+        "title": "Let's Connect",
+        "subtitle": "Have a question about a recipe? Want to collaborate or just say hi? I'd love to hear from you! Fill out the form or reach out through my social media.",
+        "email_label": "Email",
+        "insta_label": "Instagram",
+        "yt_label": "YouTube",
+        "form_name": "Full Name",
+        "form_email": "Email Address",
+        "form_subject": "Subject",
+        "form_message": "Message",
+        "placeholder_name": "Enter your name",
+        "placeholder_email": "name@example.com",
+        "placeholder_subject": "What is this about?",
+        "placeholder_message": "Your message here...",
+        "btn_send": "Send Message",
+        "btn_sending": "Sending...",
+        "btn_sent": "Sent!"
+    },
+    "search": {
+        "breadcrumb": "Search",
+        "placeholder": "Search for a recipe...",
+        "results_count_one": "{{count}} result for \"{{query}}\"",
+        "results_count_other": "{{count}} results for \"{{query}}\"",
+        "sort_label": "Sort:",
+        "sort_latest": "Latest",
+        "sort_likes": "Most Liked",
+        "sort_az": "A–Z",
+        "no_results": "No recipes found",
+        "no_results_sub": "Try searching for something else or browse all recipes.",
+        "back_home": "Back to Home"
+    },
+    "categories": {
+        "all": "All",
+        "recipes": "Recipes",
+        "pastries": "Pastries",
+        "savory": "Savory",
+        "desserts": "Desserts",
+        "drinks": "Drinks",
+        "news": "News & Media",
+        "sweet-treats": "Sweet Treats",
+        "website": "Eya Website"
+    },
+    "recipe": {
+        "by": "By",
+        "prep_time": "Prep Time",
+        "cook_time": "Cook Time",
+        "servings": "Servings",
+        "difficulty": "Difficulty",
+        "ingredients": "Ingredients",
+        "instructions": "Instructions",
+        "likes_one": "{{count}} Like",
+        "likes_other": "{{count}} Likes",
+        "share": "Share:"
+    }
+}

@@ -1,0 +1,113 @@
+{
+    "nav": {
+        "home": "Accueil",
+        "recipes": "Recettes",
+        "sweets": "Douceurs",
+        "about": "À Propos",
+        "contact": "Contact",
+        "news": "Actualités"
+    },
+    "header": {
+        "tagline": "Pâtisserie Élégante & Art Culinaire",
+        "subtitle": "Une collection de recettes choisies et d'inspiration pâtissière de la cuisine d'Eya."
+    },
+    "sidebar": {
+        "welcome_title": "À Propos",
+        "welcome_text": "Bienvenue sur Eya Flavors ! Je suis une pâtissière passionnée partageant mes recettes préférées, mes techniques et mes voyages culinaires avec vous.",
+        "about_me": "En savoir plus",
+        "search_title": "Rechercher",
+        "search_placeholder": "Rechercher des recettes...",
+        "categories_title": "Catégories",
+        "latest_posts": "Dernières Recettes",
+        "social_title": "Suivez-moi"
+    },
+    "footer": {
+        "rights": "Tous droits réservés.",
+        "links": "Liens Rapides",
+        "about_brief": "Explorer l'art de la haute pâtisserie et partager la joie de cuisiner avec le monde."
+    },
+    "common": {
+        "read_more": "Lire la suite",
+        "keep_reading": "Continuer la lecture",
+        "previous": "Précédent",
+        "next": "Suivant",
+        "recipes_count": "{{count}} recettes",
+        "browse_category": "Parcourir la catégorie",
+        "view_all_shorts": "Voir tous les Shorts sur YouTube"
+    },
+    "about": {
+        "breadcrumb": "À Propos d'Eya",
+        "creator_tag": "À propos de la créatrice",
+        "title": "Bonjour, je suis Eya",
+        "bio_p1": "Salut ! Je suis Eya, le cœur derrière Eya Flavors. Depuis mon enfance, j'adore la magie de la cuisine, surtout la préparation de biscuits, de gâteaux et de douceurs qui font sourire les gens. La pâtisserie a toujours été pour moi un moyen d'exprimer ma créativité, d'expérimenter des saveurs et de transformer des ingrédients simples en expériences inoubliables.",
+        "bio_p2": "Au fil des ans, ma passion a grandi pour devenir Eya Flavors, un endroit où je partage mon amour pour les pâtisseries, les recettes uniques et la joie de créer quelque chose de délicieux à partir de rien. Des techniques françaises classiques aux touches modernes, chaque recette est conçue avec soin et un soupçon de créativité.",
+        "bio_p3": "Que vous soyez débutant ou pâtissier chevronné, j'espère que mes recettes vous inspireront à être créatif en cuisine et à savourer les douces récompenses de la pâtisserie !",
+        "mission_title": "Ma Mission",
+        "mission_text": "Rendre l'art de la pâtisserie accessible, joyeux et beau pour tout le monde.",
+        "what_i_do": "Ce que je fais",
+        "feat_recipe_title": "Développement de Recettes",
+        "feat_recipe_desc": "Je crée et teste chaque recette plusieurs fois pour m'assurer qu'elle fonctionne parfaitement dans votre cuisine.",
+        "feat_youtube_title": "Partage sur YouTube",
+        "feat_youtube_desc": "Toutes mes recettes prennent vie dans des tutoriels vidéo faciles à suivre sur ma chaîne YouTube. Abonnez-vous et pâtissez avec moi !",
+        "feat_photo_title": "Photographie Culinaire",
+        "feat_photo_desc": "Une belle photographie culinaire qui vous donne envie de cuisiner immédiatement. Toutes les photos sont prises par moi.",
+        "find_me": "Retrouvez-me sur les réseaux sociaux",
+        "explore": "Explorer les Recettes"
+    },
+    "contact": {
+        "breadcrumb": "Contact",
+        "tagline": "Contactez-moi",
+        "title": "Restons en contact",
+        "subtitle": "Une question sur une recette ? Envie de collaborer ou juste dire bonjour ? Je serais ravie de vous lire ! Remplissez le formulaire ou contactez-moi via les réseaux sociaux.",
+        "email_label": "Email",
+        "insta_label": "Instagram",
+        "yt_label": "YouTube",
+        "form_name": "Nom Complet",
+        "form_email": "Adresse Email",
+        "form_subject": "Sujet",
+        "form_message": "Message",
+        "placeholder_name": "Entrez votre nom",
+        "placeholder_email": "nom@exemple.com",
+        "placeholder_subject": "De quoi s'agit-il ?",
+        "placeholder_message": "Votre message ici...",
+        "btn_send": "Envoyer le Message",
+        "btn_sending": "Envoi en cours...",
+        "btn_sent": "Envoyé !"
+    },
+    "search": {
+        "breadcrumb": "Recherche",
+        "placeholder": "Rechercher une recette...",
+        "results_count_one": "{{count}} résultat pour \"{{query}}\"",
+        "results_count_other": "{{count}} résultats pour \"{{query}}\"",
+        "sort_label": "Trier :",
+        "sort_latest": "Récent",
+        "sort_likes": "Plus Aimés",
+        "sort_az": "A–Z",
+        "no_results": "Aucune recette trouvée",
+        "no_results_sub": "Essayez de rechercher autre chose ou parcourez toutes les recettes.",
+        "back_home": "Retour à l'Accueil"
+    },
+    "categories": {
+        "all": "Tout",
+        "recipes": "Recettes",
+        "pastries": "Pâtisseries",
+        "savory": "Salé",
+        "desserts": "Desserts",
+        "drinks": "Boissons",
+        "news": "Actualités & Médias",
+        "sweet-treats": "Douceurs",
+        "website": "Site Eya"
+    },
+    "recipe": {
+        "by": "Par",
+        "prep_time": "Préparation",
+        "cook_time": "Cuisson",
+        "servings": "Portions",
+        "difficulty": "Difficulté",
+        "ingredients": "Ingrédients",
+        "instructions": "Instructions",
+        "likes_one": "{{count}} J'aime",
+        "likes_other": "{{count}} J'aime",
+        "share": "Partager :"
+    }
+}
